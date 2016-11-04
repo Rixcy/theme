@@ -1,1 +1,1 @@
-Readme
+##A simple blog template by Richard Booth [rixcy.com](http://rixcy.com)

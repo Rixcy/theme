@@ -10,11 +10,6 @@
 
     <title><?php echo get_bloginfo( 'name' ); ?></title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="<?php bloginfo('template_directory');?>/css/blog.css" rel="stylesheet">
-    <link href="<?php bloginfo('template_directory');?>/css/bootstrap.css" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -24,12 +19,26 @@
   </head>
 
   <body>
-
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-        <?php wp_list_pages( '&title_li=' ); ?>
-          <a class="blog-nav-item active pull-right" href="<?php bloginfo( 'wpurl' );?>">Blog Posts</a>
-        </nav>
-      </div>
-    </div>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <?php 
+        // Fix menu overlap
+         if ( is_admin_bar_showing() ) echo '<div style="min-height: 32px;"></div>'; 
+        ?>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcollapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcollapse">
+                <ul class="nav navbar-nav navbar-right">
+                <li><a href="<?php bloginfo('wpurl');?>">Home</a></li>
+                <?php wp_list_pages( '&title_li=' ); ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content">

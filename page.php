@@ -1,4 +1,10 @@
 <?php get_header(); ?>
+  <div class="blog-header">
+    <div class="container">
+      <h1 class="blog-title"><a href="<?php bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+      <p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
+    </div>
+  </div>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
@@ -14,5 +20,4 @@
 		</div> <!-- /.col -->
 	</div> <!-- /.row -->
 </div>
-<?php get_template_part( 'contactsection' ); ?>
 <?php get_footer(); ?>
