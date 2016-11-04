@@ -1,5 +1,5 @@
     <footer class="blog-footer">
-      <p>&copy 2016 Richard Booth.</p>
+      <p>&copy; 2016 Richard Booth.</p>
     </footer>
 
     <script src="<?php bloginfo('template_directory');?>/js/jquery.js" rel="stylesheet"></script>
